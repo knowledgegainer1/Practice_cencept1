@@ -17,9 +17,9 @@ validate() {
 }
 
 if [ $id -eq 0 ]; then
-    echo -e "$G SUUCCESS $N welcome root USRE"
+    echo -e "$G SUUCCESS $N welcome root USRE $N"
 else
-    echo -e "$R Error: $N u are not root"
+    echo -e "$R Error: $N u are not root $N"
     exit 1
 fi
 
