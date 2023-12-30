@@ -9,7 +9,7 @@ Y="\e[33m"
 N="\e[0m"
 validate() {
     if [ $1 -eq 1 ]; then
-        echo -e " $R FAILED ...$N   $2 check logs"
+        echo -e " $R FAILED ...$N   $2 check logs at  /tmp/$0-$date.log"
         exit 1
     else
         echo -e "$G Successfully $2"
