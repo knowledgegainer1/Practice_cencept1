@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 validate() {
-    if [ $1 -eq 0]; then
+    if [ $1 -eq 1 ]; then
         echo -e " $R FAILED ...$N  check logs"
         exit 1
     else
@@ -19,7 +19,7 @@ if [ $id -ne 0 ]; then
     echo -e "Dont have permission to do this !! $R Please run this by SUDO access $N"
     exit 1
 else
-    for pkg in $@;
+    for pkg in $@
     do
         yum list installed $pkg &>>$logfile
         if [ $? -eq 0 ]; then
