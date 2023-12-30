@@ -9,9 +9,9 @@ N="\e[0m"
 logname="/tmp/$0-$dat.log"  # quotes bcos its string "
 validate() {
     if [ $1 -eq 0 ]; then
-        echo "$2 ....is $G SUCCESS"
+        echo -e "$2 ....is $G SUCCESS"
     else
-        echo "$2 ...$R FAILED"
+        echo -e  "$2 ...$R FAILED"
         exit 1
     fi
 }
@@ -19,9 +19,9 @@ validate() {
 
 
 if [ $id -eq 0 ]; then
-    echo "$G SUUCCESS $N welcome root USRE"
+    echo -e  "$G SUUCCESS $N welcome root USRE"
 else
-    echo "$R Error: $N u are not root"
+    echo -e "$R Error: $N u are not root"
     exit 1
 fi
 
