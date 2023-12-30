@@ -1,20 +1,21 @@
 #!/bin/bash
 
-validate (){
+validate() {
     if [ $1 -eq 0 ]; then
-    echo "$2 ....is SUCCESS"
+        echo "$2 ....is SUCCESS"
     else
-    echo "$2 ...FAILED"
-    exit 1
+        echo "$2 ...FAILED"
+        exit 1
+    fi
 }
 
 id=$(id -u)
 
 if [ $id -eq 0 ]; then
-echo "welcome root USRE"
+    echo "welcome root USRE"
 else
-echo "Error: u are not root"
-exit 1
+    echo "Error: u are not root"
+    exit 1
 fi
 
 yum install ngi9nx -y
@@ -22,4 +23,3 @@ validate $? "installing nginx"
 
 yum install git -y
 validate $? "installing GIT"
-
