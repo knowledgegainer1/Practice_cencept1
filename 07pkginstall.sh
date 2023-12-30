@@ -8,19 +8,18 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-
-if [ $id -ne 0 ];
-then
-echo -e "Dont have permission to do this !! $R Please run this by SUDO access $N"
+if [ $id -ne 0 ]; then
+    echo -e "Dont have permission to do this !! $R Please run this by SUDO access $N"
+    exit 1
 else
-for pkg in $@ 
-do
- yum list installed $pkg  &>> $logfile
- if [ $? -eq 0 ]; then
- echo "Its Already existed so $Y ....SKIPPED $N"
- else
-  yum install $pkg -y &>> $logfile
-  echo "Installed ---- $G Success $N"
-done
+    for pkg in $@
+    do
+        yum list installed $pkg &>>$logfile
+        if [ $? -eq 0 ]; then
+            echo "Its Already existed so $Y ....SKIPPED $N"
+        else
+            yum install $pkg -y &>>$logfile
+            echo "Installed ---- $G Success $N"
+        fi
+    done
 fi
- 
