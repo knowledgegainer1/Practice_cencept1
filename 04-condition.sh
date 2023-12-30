@@ -12,7 +12,7 @@ id=$(id -u)
 
 if [ $id -ne 0 ]; then
     echo "this is not root user"
-    exit 0
+    exit 0  # exit status is used to end flow at that point status code are 0 and 1 
 else
     echo "welcome root  "
 fi
