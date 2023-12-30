@@ -1,12 +1,17 @@
 #!/bin/bash
 dat=$(date +%F-%R-%S)
 id=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 logname="/tmp/$0-$dat.log"  # quotes bcos its string "
 validate() {
     if [ $1 -eq 0 ]; then
-        echo "$2 ....is SUCCESS"
+        echo "$2 ....is $G SUCCESS"
     else
-        echo "$2 ...FAILED"
+        echo "$2 ...$R FAILED"
         exit 1
     fi
 }
@@ -14,9 +19,9 @@ validate() {
 
 
 if [ $id -eq 0 ]; then
-    echo "welcome root USRE"
+    echo "$G SUUCCESS $N welcome root USRE"
 else
-    echo "Error: u are not root"
+    echo "$R Error: $N u are not root"
     exit 1
 fi
 
