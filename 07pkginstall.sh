@@ -16,10 +16,10 @@ else
     do
         yum list installed $pkg &>>$logfile
         if [ $? -eq 0 ]; then
-            echo -e  "Its Already existed so $Y ....SKIPPED $N"
+            echo -e  "$pkg Its Already existed so $Y ....SKIPPED $N"
         else
             yum install $pkg -y &>>$logfile
-            echo  -e "Installed ---- $G Success $N"
+            echo  -e "Installed ---- $pkg $G Success $N"
         fi
     done
 fi
