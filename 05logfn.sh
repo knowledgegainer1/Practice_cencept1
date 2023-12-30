@@ -1,5 +1,7 @@
 #!/bin/bash
-
+dat=$(date +%F-%R-%S)
+id=$(id -u)
+logname="/tmp/$0-$dat.log"  # quotes bcos its string "
 validate() {
     if [ $1 -eq 0 ]; then
         echo "$2 ....is SUCCESS"
@@ -9,7 +11,7 @@ validate() {
     fi
 }
 
-id=$(id -u)
+
 
 if [ $id -eq 0 ]; then
     echo "welcome root USRE"
@@ -18,8 +20,8 @@ else
     exit 1
 fi
 
-yum install nginx -y  &>> temp.log
+yum install nginx -y  &>> $logname
 validate $? "installing nginx"
 
-yum install git -y
+yum install git -y &>> $logname
 validate $? "installing GIT"
