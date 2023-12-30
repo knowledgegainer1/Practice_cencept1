@@ -12,7 +12,7 @@ echo "please enter a number from 0 "
 
 read number
 
-if [ $number % 2 -eq 0 ] ; then
+if [ $number%2 -eq 0 ] ; then
     echo "this number is prime"
 else
     echo "not prim"
