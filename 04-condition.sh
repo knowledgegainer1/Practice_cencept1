@@ -17,10 +17,20 @@ else
     echo "welcome root  "
 fi
 
-yum install git -y
+yum install giiit -y
 
 if [ $? -eq 0 ]; then
     echo "Installed successfully"
 else
     echo "Error in installing"
+    exit 1
+fi
+
+yum install nginx -y
+
+if [ $? -eq 0 ]; then
+    echo "Installed successfully"
+else
+    echo "Error in installing"
+    exit 1
 fi
