@@ -8,12 +8,9 @@
 #     echo "$x is less than 20"
 # fi
 
-echo "please enter a number from 0 "
+id=$(id -u)
 
-read number
-
-if [ $number%2 -eq 0 ] ; then
-    echo "this number is prime"
+if [ $id -ne 0 ]; then
+echo "this is not root user"
 else
-    echo "not prim"
-fi
+echo "try with root user "
