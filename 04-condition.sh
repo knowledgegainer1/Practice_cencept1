@@ -11,6 +11,7 @@
 id=$(id -u)
 
 if [ $id -ne 0 ]; then
-echo "this is not root user"
+    echo "this is not root user"
 else
-echo "try with root user "
+    echo "try with root user "
+fi
