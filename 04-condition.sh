@@ -7,6 +7,16 @@
 # else
 #     echo "$x is less than 20"
 # fi
+#using fn for code less writing
+validate(){
+if [ $? -eq 0 ]; then
+    echo "Installed successfully"
+else
+    echo "Error in installing"
+    exit 1
+fi
+
+}
 
 id=$(id -u)
 
@@ -17,20 +27,18 @@ else
     echo "welcome root  "
 fi
 
-yum install giiit -y
-
-if [ $? -eq 0 ]; then
-    echo "Installed successfully"
-else
-    echo "Error in installing"
-    exit 1
-fi
+yum install git -y
+validate
 
 yum install nginx -y
+validate
 
-if [ $? -eq 0 ]; then
-    echo "Installed successfully"
-else
-    echo "Error in installing"
-    exit 1
-fi
+
+# yum install nginx -y
+
+# if [ $? -eq 0 ]; then
+#     echo "Installed successfully"
+# else
+#     echo "Error in installing"
+#     exit 1
+# fi
