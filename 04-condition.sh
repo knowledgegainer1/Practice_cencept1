@@ -12,8 +12,9 @@ id=$(id -u)
 
 if [ $id -ne 0 ]; then
     echo "this is not root user"
+    exit 0
 else
     echo "welcome root  "
 fi
 
-yum install mysql -y
+yum install nginx -y
