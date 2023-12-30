@@ -9,7 +9,7 @@ Y="\e[33m"
 N="\e[0m"
 validate() {
     if [ $1 -eq 1 ]; then
-        echo -e " $R FAILED ...$N  check logs"
+        echo -e " $R FAILED ...$N   $2 check logs"
         exit 1
     else
         echo -e "$G Successfully $2"
