@@ -13,3 +13,7 @@ then
     echo  -e " $R directory not exist $N"
     exit 1
 fi
+
+
+
+echo " entered out of  loop  instaed of stopping at error"
