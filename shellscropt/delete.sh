@@ -1,8 +1,15 @@
 #!/bin/bash
 
-source_dir=/tmp/shell-logs.txt
+source_dir=/tmp/shellscript-logs
+#if dire not there create or skip
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
-
-
-ls -lrt  &>> $source_dir
+if [  ! -d $source_dir ]; 
+then
+    echo  -e " $R directory not exist $N"
+    exit 1
+fi
