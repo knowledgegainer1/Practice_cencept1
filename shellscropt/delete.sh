@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source_dir=/tmp/shell-logs
+source_dir=/tmp/shell-logs.txt
 
 
 
