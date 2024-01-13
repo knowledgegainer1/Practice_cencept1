@@ -11,7 +11,7 @@ N="\e[0m"
 if [  ! -d $source_dir ]; 
 then
     echo  -e " $R directory not exist $N"
-    exit 1
+    
 fi
 
 
