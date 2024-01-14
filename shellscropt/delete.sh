@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source_dir=/tmp/shellscript-logs/
+source_dir=/tmp/shell/
 #if dire not there create or skip
 
 R="\e[31m"
