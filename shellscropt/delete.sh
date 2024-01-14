@@ -16,7 +16,11 @@ fi
 
 #next we need to find .log  files in that directory
 
-find 
-for i in x
+old_files=find $source_dir -type f -mtime +14 -name "*.log"
 
- rm $i
+
+while read -r line
+do
+ echo "deleting $line"
+ rm $line
+done  <<< $old_files
