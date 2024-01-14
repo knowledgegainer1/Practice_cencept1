@@ -1,20 +1,15 @@
 #!/bin/bash
 
 
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
-
 
 list=$(df -hT | grep -vE 'tmp|File')
+treshold=1
+message=""
 
-
-
-while IFS=" " read -r  f1 f2 f3
-do
- echo "$f1"
- echo "$f2"
- echo "$f3"
-
-done  <<<$list
+while IFS= read -r line; do
+    usage=$(df -hT | grep -vE 'tmp|File' | awk '{print $6F}' | cut -d % -f1)
+    partition=$(df -hT | grep -vE 'tmp|File' | awk '{print $1F}')
+    if [ $usage -gt $treshold ]; then
+        message+="high disk usage on $partition :$usage"
+    fi
+done <<<$list
