@@ -22,5 +22,5 @@ old_files=find $source_dir -type f -mtime +14 -name "*.log"
 while read -r line
 do
  echo "deleting $line"
- rm $line
+ rm -f $line
 done  <<< $old_files
