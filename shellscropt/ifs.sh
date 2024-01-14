@@ -16,7 +16,7 @@ fi
 
 #next we need to find .log  files in that directory
 
-while IFS="/" read -r f1 f2 f3 f4 f5
+while IFS=":" read -r f1 f2 f3 f4 f5
 do 
-echo " $f1"
+echo " $f1 ---$f1 ----$f3 ----$f4 ---$f5"
 done <<< $source_dir
