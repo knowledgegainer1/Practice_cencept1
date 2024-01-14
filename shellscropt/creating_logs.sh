@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-folder_path=/tmp/shell/
+folder_path="/tmp/shell/"
 
 #old files
 
