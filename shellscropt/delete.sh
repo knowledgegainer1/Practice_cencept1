@@ -16,7 +16,7 @@ fi
 
 #next we need to find .log  files in that directory
 
-old_files=find $source_dir -type f -mtime +14 -name "*.log"
+old_files=$(find $source_dir -type f -mtime +14 -name "*.log")
 
 
 while IFS= read -r line
