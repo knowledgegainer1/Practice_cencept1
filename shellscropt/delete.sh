@@ -19,7 +19,7 @@ fi
 old_files=find $source_dir -type f -mtime +14 -name "*.log"
 
 
-while read -r line
+while IFS= read -r line
 do
  echo "deleting $line"
  rm -rf $line
