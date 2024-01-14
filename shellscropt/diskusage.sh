@@ -17,4 +17,4 @@ do
 done <<<$list
 
 
-echo "$message"
+echo -e "$message"
