@@ -17,4 +17,4 @@ do
 done <<<$list
 
 
-echo "This is a test mail & Date $(date)" | mail -s "$message" gottamsadashiva@gmail.com
+echo "$message" | mail -s "High disk Usage" gottamsadashiva@gmail.com
