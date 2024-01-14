@@ -17,4 +17,4 @@ do
 done <<<$list
 
 
-echo -e "$message"
+echo "This is a test mail & Date $(date)" | mail -s "$message" info@joindevops.com
