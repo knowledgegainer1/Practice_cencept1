@@ -17,4 +17,4 @@ do
 done <<<$list
 
 
-echo "$message" | mail -s "High disk Usage" gottamsadashiva@gmail.com
+echo -e "$message" | mail -s "High disk Usage" gottamsadashiva@gmail.com
